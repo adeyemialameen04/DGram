@@ -1,3 +1,85 @@
 .show-deleteBtn {
   display: none;
 }
+
+.home__section {
+  margin-top: 6rem;
+}
+
+.homepage__container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.select-image {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: row;
+  background-color: var(--clr-gray);
+  padding-block: 2rem;
+  max-width: 500px;
+  align-self: center;
+  width: 100%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .16);
+
+}
+
+.select-image button {
+  display: grid;
+  place-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .16), 0 1px 3px rgba(0, 0, 0, .23);
+  height: 35px;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  padding-inline: 1.5rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.select-image button:hover {
+  background-color: hsl(0, 11%, 96%);
+  color: var(--clr-blue);
+}
+
+.browseClick {
+  background-color: var(--clr-blue);
+  color: var(--clr-gray);
+}
+
+.images__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15ren, 1fr));
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.btns {
+  display: flex;
+  gap: .6rem;
+}
+
+.btns>* {
+  height: 30px;
+  width: 30px;
+  display: grid;
+  place-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .16), 0 1px 3px rgba(0, 0, 0, .23);
+  box-shadow: 0 1px 3px var(--clr-blue), 0 1px 3px rgba(0, 0, 0, .23);
+  background-color: var(--clr-blue);
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.btns>*:hover {
+  background-color: var(--clr-gray);
+  border-color: var(--clr-blue);
+}
