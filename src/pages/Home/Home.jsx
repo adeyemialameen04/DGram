@@ -3,11 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { ref, uploadBytes, listAll, getDownloadURL, deleteObject } from "firebase/storage";
 import { v4 } from "uuid";
 import { auth, storage } from "../../config/firebase";
-import { saveAs } from 'file-saver';
 import { AiFillDelete, AiOutlineDownload } from 'react-icons/ai';
 import { onAuthStateChanged } from "firebase/auth";
-import { Link } from "react-router-dom";
-
+import download from "downloadjs";
 
 const Home = () => {
   const [imageUpload, setImageUpload] = useState(null);
@@ -30,15 +28,16 @@ const Home = () => {
 
   const handleUploadImage = () => {
     if (imageUpload == null) return;
-    const imageName = `${userId}_${imageUpload.name + v4()}`;
+    const imageName = `${userId}_${v4() + imageUpload.name}`;
+    // console.log(imageName);
     const imageRef = ref(storage, `images/${imageName}`);
+    // console.log(imageName);
     uploadBytes(imageRef, imageUpload)
       .then((snapshot) => {
         alert("Image Uploaded Successfully");
         getDownloadURL(snapshot.ref)
           .then((url) => {
             setImageLists((prev) => [{ url, name: imageName }, ...prev]);
-            // setImageUpload();
           });
       });
   };
@@ -78,24 +77,23 @@ const Home = () => {
 
   }, []);
 
-  useEffect(() => {
-    console.log(authCompleted);
-  }, [authCompleted]);
-
   const handleDownloadImage = (url) => {
-    fetch(url)
-      .then((response) => response.blob())
-      .then((blob) => {
-        saveAs(blob, `${url}.png`);
-      });
+    // const fileName = url.substring(url.lastIndexOf("/") + 1);
+    const lll = url + ".png";
+    console.log(lll);
+    download(url);
+    // window.location.href = url;
   };
+
+
   const handleBrowseClick = () => {
     fileRef.current.click();
   };
+
   return (
     <section className="home__section">
       <div className="container homepage__container">
-        <div className="select-image">
+        <aside className="select-image">
           <input
             type="file"
             name="imageInput"
@@ -108,8 +106,8 @@ const Home = () => {
           />
           <button onClick={handleBrowseClick} className="browseClick">Choose your file</button>
           <button onClick={handleUploadImage}>Submit Query</button>
-        </div>
-        <div className="images__container">
+        </aside>
+        <main className="images__container">
           {
             imageLists.map(({ url, name, uid }, index) => (
               <article className="image" key={index}>
@@ -127,7 +125,7 @@ const Home = () => {
               </article>
             ))
           }
-        </div>
+        </main>
       </div>
     </section>
   );
