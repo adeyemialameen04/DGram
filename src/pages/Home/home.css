@@ -15,10 +15,7 @@
 
 .select-image {
   display: flex;
-  /* align-items: center; */
-  justify-content: center;
   gap: 1rem;
-  flex-direction: row;
   background-color: var(--clr-gray);
   padding-block: 2rem;
   max-width: 500px;
@@ -26,6 +23,7 @@
   width: 100%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .16);
   align-items: center;
+  padding-inline: 1rem;
 }
 
 
@@ -33,12 +31,13 @@
   display: grid;
   place-content: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, .16), 0 1px 3px rgba(0, 0, 0, .23);
-  height: 35px;
   letter-spacing: 1px;
   font-size: 0.9rem;
-  padding-inline: 1.5rem;
+  padding-inline: .5rem;
+  width: 100%;
   border: 1px solid transparent;
   transition: var(--transition);
+  /* margin-inline: 1rem; */
 }
 
 .select-image button:hover {
@@ -94,4 +93,15 @@
 .btns>*:hover {
   background-color: var(--clr-gray);
   border-color: var(--clr-blue);
+}
+
+@media (max-width:300px) {
+  .select-image {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .select-image button {
+    height: 40px;
+  }
 }

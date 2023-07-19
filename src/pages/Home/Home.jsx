@@ -29,7 +29,6 @@ const Home = () => {
 
   const handleUploadImage = () => {
     if (imageUpload == null) return;
-    // console.log(imageUpload.type);
     if (!imageUpload.type.startsWith("image/")) {
       alert("Please select an image to continue 🥹🥹");
       return;
