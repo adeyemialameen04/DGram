@@ -6,6 +6,7 @@ import { auth, storage } from "../../config/firebase";
 import { AiFillDelete, AiOutlineDownload } from 'react-icons/ai';
 import { onAuthStateChanged } from "firebase/auth";
 import download from "downloadjs";
+import { saveAs } from "file-saver";
 
 const Home = () => {
   const [imageUpload, setImageUpload] = useState(null);
@@ -53,10 +54,12 @@ const Home = () => {
         );
         alert("Image deleted successfully");
       } else {
-        alert("You are not eligible to download this file because you are not the one that uploaded it");
+        alert("You are not eligible to delete this file because you are not the one that uploaded it");
       }
     } catch (error) {
-      console.error('Error deleting image:', error);
+      return (
+        <h1>Error deleting this image</h1>
+      );
     }
   };
 
@@ -81,7 +84,8 @@ const Home = () => {
     // const fileName = url.substring(url.lastIndexOf("/") + 1);
     const lll = url + ".png";
     console.log(lll);
-    download(url);
+    // download(url);
+    saveAs(lll);
     // window.location.href = url;
   };
 
