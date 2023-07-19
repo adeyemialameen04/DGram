@@ -1,3 +1,7 @@
+.auth__main {
+  margin-top: 6rem;
+}
+
 .auth__container {
   display: flex;
   flex-direction: column;

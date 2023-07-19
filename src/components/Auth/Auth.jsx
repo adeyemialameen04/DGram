@@ -36,7 +36,7 @@ const Auth = () => {
 
   if (!user) {
     return (
-      <main>
+      <main className="auth__main">
         <div className="auth__container container">
           <h1>Welcome to Dgram</h1>
           <p>Login to view and add images online</p>
@@ -47,7 +47,7 @@ const Auth = () => {
   }
 
   return (
-    <main>
+    <main className="auth__main">
       <div className="auth__container container">
         <h1>Hi {auth?.currentUser?.displayName}</h1>
         <Link to="/home">Proceed to App</Link>
