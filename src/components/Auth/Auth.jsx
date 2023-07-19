@@ -30,7 +30,9 @@ const Auth = () => {
     try {
       await signOut(auth);
     } catch (error) {
-      console.error(error);
+      return (
+        <h1>Error signing you out tray again later</h1>
+      );
     }
   };
 
@@ -38,7 +40,7 @@ const Auth = () => {
     return (
       <main className="auth__main">
         <div className="auth__container container">
-          <h1>Welcome to Dgram</h1>
+          <h1>Welcome to <span>Dgram</span></h1>
           <p>Login to view and add images online</p>
           <button className="siginWithGoogleBtns" onClick={signInWithGoogle}>Login with google</button>
         </div>

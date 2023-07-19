@@ -19,6 +19,13 @@
   font-size: 1.2rem;
 }
 
+.auth__container h1 span {
+  font-size: 1.9rem;
+  color: var(--clr-blue);
+  font-weight: 900;
+  font-family: 'Marck Script', cursive;
+}
+
 .siginWithGoogleBtns {
   display: grid;
   place-content: center;
