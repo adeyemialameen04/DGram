@@ -29,10 +29,14 @@ const Home = () => {
 
   const handleUploadImage = () => {
     if (imageUpload == null) return;
+    // console.log(imageUpload.type);
+    if (!imageUpload.type.startsWith("image/")) {
+      alert("Please select an image to continue 🥹🥹");
+      return;
+    }
+
     const imageName = `${userId}_${v4() + imageUpload.name}`;
-    // console.log(imageName);
     const imageRef = ref(storage, `images/${imageName}`);
-    // console.log(imageName);
     uploadBytes(imageRef, imageUpload)
       .then((snapshot) => {
         alert("Image Uploaded Successfully");
