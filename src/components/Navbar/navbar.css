@@ -1,0 +1,30 @@
+.nav__container {
+  font-family: 'Marck Script', cursive;
+  padding-block: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__container a {
+  font-size: 1.9rem;
+  color: var(--clr-blue);
+  text-decoration: none;
+}
+
+.nav__container button {
+  height: 50px;
+  width: 50px;
+  border: 1px solid transparent;
+  font-size: 1.8rem;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  background-color: var(--clr-blue);
+  transition: var(--transition);
+}
+
+.nav__container button:hover {
+  background-color: var(--clr-gray);
+  border: 2px solid var(--clr-blue);
+}
