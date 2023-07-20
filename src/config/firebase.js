@@ -4,8 +4,10 @@ import { getAuth } from 'firebase/auth';
 import { GoogleAuthProvider } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
+const apiKey = import.meta.env.VITE_REACT_APP_FIREBASE_API_KEY;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCYbX1ryBUWqUXbS6HpfntBdJbXc6ruxy0",
+  apiKey: apiKey,
   authDomain: "dgram-54acc.firebaseapp.com",
   projectId: "dgram-54acc",
   storageBucket: "dgram-54acc.appspot.com",
