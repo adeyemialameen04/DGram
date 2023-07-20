@@ -54,7 +54,7 @@
 .images__container {
   display: grid;
   gap: 1.7rem;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   /* background-color: red; */
 }
 
@@ -67,7 +67,7 @@
 
 .image .img__container img {
   background-color: green;
-  max-height: 500px;
+  height: 500px;
   object-fit: cover;
   width: 100%;
 }
