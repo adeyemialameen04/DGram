@@ -28,6 +28,7 @@ const Navbar = () => {
         <button onClick={logout}>
           <AiOutlinePoweroff />
         </button>
+        <Link to="/audio">Audios</Link>
       </div>
     </nav>
   );
