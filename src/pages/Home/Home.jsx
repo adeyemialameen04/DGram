@@ -11,7 +11,7 @@ const Home = () => {
   const reference = "images/";
   const type = "image/";
   const uploadType = "Image";
-  const { handleUploadFile, fileLists, setFileUpload, getAllFiles, handleDeleteFile } = useUploadFile(reference, type, uploadType);
+  const { handleUploadFile, fileLists, setFileUpload, getAllFiles, handleDeleteFile, handleDownloadFile } = useUploadFile(reference, type, uploadType);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -28,12 +28,6 @@ const Home = () => {
     getAllFiles();
   }, []);
 
-  const handleDownloadImage = (url) => {
-    const lll = url + ".png";
-    console.log(lll);
-    saveAs(lll);
-  };
-
   return (
     <section className="home__section">
       <div className="container homepage__container">
@@ -49,7 +43,7 @@ const Home = () => {
                   <button onClick={() => handleDeleteFile(name, uid)}>
                     <AiFillDelete />
                   </button>
-                  <button onClick={() => handleDownloadImage(url)}>
+                  <button onClick={() => handleDownloadFile(url)}>
                     <AiOutlineDownload />
                   </button>
                 </div>
