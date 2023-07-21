@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
+import Audio from "../pages/Audio/Audio";
 
 const AnimatedRoutes = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const AnimatedRoutes = () => {
     <Routes>
       <Route path="/" element={<Auth />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/audio" element={<Audio />} />
     </Routes>
   );
 };
