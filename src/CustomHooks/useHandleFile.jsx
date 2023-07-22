@@ -21,10 +21,6 @@ const useHandleFile = (reference, type, uploadType) => {
     const fileName = `${userId}_${v4()}_${fileUpload.name}`;
     const fileRef = ref(storage, `${reference}${fileName}`);
 
-
-    console.log("Upload", fileUpload);
-    console.log("Name", fileName);
-
     uploadBytes(fileRef, fileUpload)
       .then((snapshot) => {
         alert(`${uploadType} Uploaded Successfully😉😉`);
@@ -56,7 +52,6 @@ const useHandleFile = (reference, type, uploadType) => {
           const fileName = item.name;
           const fileUid = fileName.split('_')[0];
           const realFileName = fileName.split("_")[2];
-          console.log(realFileName);
           return { url, name: fileName, uid: fileUid, realName: realFileName };
         })
       );
@@ -69,15 +64,8 @@ const useHandleFile = (reference, type, uploadType) => {
 
   const handleDownloadFile = (url) => {
     const newUrl = url + ".png";
-    console.log(newUrl);
     saveAs(newUrl);
   };
-
-  useEffect(() => {
-    // fileLists && console.log("111", fileLists[1].uid);
-    // console.log("uida", auth?.currentUser?.uid);
-    // fileLists && console.log("2222", fileLists[2]);
-  }, []);
 
   return { uploadFile, setFileUpload, deleteFile, getAllFiles, fileLists, setFileLists, handleDownloadFile };
 };
