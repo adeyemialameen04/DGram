@@ -1,0 +1,17 @@
+.btns>* {
+  height: 50px;
+  width: 50px;
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .16), 0 1px 3px rgba(0, 0, 0, .23);
+  box-shadow: 0 1px 3px var(--clr-blue), 0 1px 3px rgba(0, 0, 0, .23);
+  background-color: var(--clr-blue);
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.btns>*:hover {
+  background-color: var(--clr-gray);
+  border-color: var(--clr-blue);
+}

@@ -1,6 +1,6 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Auth from "./Auth/Auth";
-import Home from "../pages/Home/Home";
+import Images from "../pages/Images/Images";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
@@ -22,7 +22,7 @@ const AnimatedRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Auth />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/images" element={<Images />} />
       <Route path="/audio" element={<Audio />} />
     </Routes>
   );

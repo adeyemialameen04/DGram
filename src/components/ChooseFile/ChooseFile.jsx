@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import "./chooseFile.css";
 
 const ChooseFile = ({ setFileUpload, handleUploadFile }) => {
   const fileRef = useRef(null);
