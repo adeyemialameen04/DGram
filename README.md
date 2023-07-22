@@ -1,5 +1,3 @@
-
-```markdown
 # DGram
 
 This project is a simple web application that allows users to upload and manage image and audio files using Firebase Storage. It is built with React and integrates with Firebase for authentication and storage.
@@ -13,6 +11,10 @@ This project is a simple web application that allows users to upload and manage 
 - Download files
 - Real-time updates for uploaded files
 
+## Demo
+
+[View Demo](https://dgram-zeta.vercel.app)
+
 ## Prerequisites
 
 Before running the project, make sure you have the following installed:
@@ -24,13 +26,13 @@ Before running the project, make sure you have the following installed:
 
 1. Clone the repository:
 
-```
+```bash
 https://github.com/adeyemialameen04/DGram.git
 ```
 
 2. Install the dependencies:
 
-```
+```bash
 cd DGram
 npm install
 ```
@@ -42,7 +44,7 @@ npm install
 
 4. Start the development server:
 
-```
+```bash
 npm run dev
 ```
 
@@ -63,6 +65,3 @@ The application should now be running on `http://localhost:5173/`.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-This README provides a brief overview of the project, its features, prerequisites, and how to get started using it. It also mentions the technologies used and the project's license. You can customize this further based on your specific project needs and preferences.
