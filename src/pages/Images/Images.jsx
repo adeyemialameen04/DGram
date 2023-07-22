@@ -10,7 +10,7 @@ const Images = () => {
   const reference = "images/";
   const type = "image/";
   const uploadType = "Image";
-  const { handleUploadFile, fileLists, setFileLists, setFileUpload, getAllFiles, handleDeleteFile, handleDownloadFile } = useHandleFile(reference, type, uploadType);
+  const { uploadFile, fileLists, setFileLists, setFileUpload, getAllFiles, handleDownloadFile } = useHandleFile(reference, type, uploadType);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -39,7 +39,7 @@ const Images = () => {
   return (
     <section className="images__section">
       <div className="container images__container">
-        <ChooseFile handleUploadFile={handleUploadFile} setFileUpload={setFileUpload} />
+        <ChooseFile uploadFile={uploadFile} setFileUpload={setFileUpload} />
         <main className="imgs__container">
           {
             fileLists &&

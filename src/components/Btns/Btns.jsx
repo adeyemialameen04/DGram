@@ -4,10 +4,7 @@ import "./btns.css";
 import { auth } from "../../config/firebase";
 
 const Btns = ({ name, uid, url, onFileDeleted, reference, type, uploadType }) => {
-  // const reference = "images/";
-  // const type = "image/";
-  // const uploadType = "Image";
-  const { handleDeleteFile, handleDownloadFile } = useHandleFile(reference, type, uploadType);
+  const { deleteFile, handleDownloadFile } = useHandleFile(reference, type, uploadType);
 
   const handleDelete = async () => {
     const currentUserUid = auth.currentUser?.uid;
@@ -15,7 +12,7 @@ const Btns = ({ name, uid, url, onFileDeleted, reference, type, uploadType }) =>
       if (currentUserUid !== uid) {
         alert("You are not eligible to delete this file because you are not the one that uploaded it");
       } else {
-        await handleDeleteFile(name, uid);
+        await deleteFile(name, uid);
         onFileDeleted(name);
         alert("File deleted successfully");
       }
