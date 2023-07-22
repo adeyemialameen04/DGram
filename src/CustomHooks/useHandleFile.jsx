@@ -55,7 +55,9 @@ const useHandleFile = (reference, type, uploadType) => {
         getDownloadURL(item).then((url) => {
           const fileName = item.name;
           const fileUid = fileName.split('_')[0];
-          return { url, name: fileName, uid: fileUid };
+          const realFileName = fileName.split("_")[2];
+          console.log(realFileName);
+          return { url, name: fileName, uid: fileUid, realName: realFileName };
         })
       );
       Promise.all(promises).then((imageData) => {

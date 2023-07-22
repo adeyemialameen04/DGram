@@ -11,6 +11,10 @@
   padding-inline: 1rem;
 }
 
+.browseClick {
+  background-color: var(--clr-blue);
+  color: var(--clr-gray);
+}
 
 .select-image button {
   display: grid;

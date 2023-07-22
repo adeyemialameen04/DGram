@@ -2,6 +2,7 @@ import useHandleFile from "../../CustomHooks/useHandleFile";
 import ChooseFile from "../../components/ChooseFile/ChooseFile";
 import { useEffect } from "react";
 import Btns from "../../components/Btns/Btns";
+import "./audio.css";
 
 const Audio = () => {
   const reference = "audios/";
@@ -22,15 +23,14 @@ const Audio = () => {
     <section className="audio__section">
       <div className="container audios__container">
         <ChooseFile handleUploadFile={handleUploadFile} setFileUpload={setFileUpload} />
-        <main className="aud__container">
+        <main className="auds__container">
           {
-            fileLists.map(({ url, name, uid }, index) => (
-              <article style={{
-                borderBottom: "1px solid black",
-                paddingBottom: "0.5rem",
-                marginBottom: "1rem",
-              }} key={index}>
-                <audio controls src={url}></audio>
+            fileLists.map(({ url, name, uid, realName }, index) => (
+              <article className="audio" key={index}>
+                <div className="aud__container">
+                  <p>{realName}</p>
+                  <audio controls src={url}></audio>
+                </div>
                 <Btns
                   name={name}
                   url={url}
