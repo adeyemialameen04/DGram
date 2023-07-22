@@ -52,7 +52,7 @@ const Auth = () => {
     <main className="auth__main">
       <div className="auth__container container">
         <h1>Hi {auth?.currentUser?.displayName}</h1>
-        <Link to="/home">Proceed to App</Link>
+        <Link to="/images">Proceed to App</Link>
         <button className="siginWithGoogleBtns" onClick={logout}>SignOut</button>
       </div>
     </main>
