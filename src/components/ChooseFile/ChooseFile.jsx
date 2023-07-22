@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import "./chooseFile.css";
 
-const ChooseFile = ({ setFileUpload, handleUploadFile }) => {
+const ChooseFile = ({ setFileUpload, uploadFile }) => {
   const fileRef = useRef(null);
 
 
@@ -22,7 +22,7 @@ const ChooseFile = ({ setFileUpload, handleUploadFile }) => {
         onChange={(e) => setFileUpload(e.target.files[0])}
       />
       <button onClick={handleBrowseClick} className="browseClick">Choose your file</button>
-      <button onClick={handleUploadFile}>Submit Query</button>
+      <button onClick={uploadFile}>Submit Query</button>
     </aside>
   );
 };

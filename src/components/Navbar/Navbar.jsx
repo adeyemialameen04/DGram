@@ -3,9 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiOutlinePoweroff } from "react-icons/ai";
 import { signOut } from "firebase/auth";
 import { auth } from "../../config/firebase";
+import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const [isNavShowing, setIsNavShowing] = useState(false);
 
   const logout = async () => {
     try {
@@ -20,17 +24,38 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <header>
       <div className="container nav__container">
-        <Link to="/home">
+        <Link className="logo" to="/home">
           DGram
         </Link>
-        <button onClick={logout}>
-          <AiOutlinePoweroff />
-        </button>
-        <Link to="/audio">Audios</Link>
+        <nav>
+          <ul className={`nav__links ${isNavShowing ? "show-nav" : ""}`}>
+            <li>
+              <Link to="/images">Images</Link>
+            </li>
+            <li>
+              <Link to="/audio">Audios</Link>
+            </li>
+            <li>
+              <button onClick={logout}>
+                <AiOutlinePoweroff />
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div
+          className="nav__btns"
+          onClick={() => setIsNavShowing(prev => !prev)}
+        >
+          <button>
+            {
+              isNavShowing ? <FaTimes /> : <GiHamburgerMenu />
+            }
+          </button>
+        </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

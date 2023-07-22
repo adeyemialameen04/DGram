@@ -6,13 +6,13 @@ import { saveAs } from "file-saver";
 
 
 const useHandleFile = (reference, type, uploadType) => {
-  const [fileUpload, setFileUpload] = useState(null);
+  const [fileUpload, setFileUpload] = useState({});
   const [fileLists, setFileLists] = useState([]);
 
   const fileListsRef = ref(storage, reference);
   const userId = auth?.currentUser?.uid;
 
-  const handleUploadFile = () => {
+  const uploadFile = () => {
     if (fileUpload == null) return;
     if (!fileUpload.type.startsWith(type)) {
       alert("Please select an image to continue 🥹🥹");
@@ -35,7 +35,7 @@ const useHandleFile = (reference, type, uploadType) => {
       });
   };
 
-  const handleDeleteFile = async (fileName, uid) => {
+  const deleteFile = async (fileName, uid) => {
     const fileRef = ref(storage, `${reference}${fileName}`);
     try {
       await deleteObject(fileRef);
@@ -79,7 +79,7 @@ const useHandleFile = (reference, type, uploadType) => {
     // fileLists && console.log("2222", fileLists[2]);
   }, []);
 
-  return { handleUploadFile, setFileUpload, handleDeleteFile, getAllFiles, fileLists, setFileLists, handleDownloadFile };
+  return { uploadFile, setFileUpload, deleteFile, getAllFiles, fileLists, setFileLists, handleDownloadFile };
 };
 
 export default useHandleFile;
