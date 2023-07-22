@@ -1,0 +1,26 @@
+.audio__section {
+  margin-top: 2rem;
+  padding-bottom: 10rem;
+}
+
+.audios__container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.auds__container {
+  gap: 1.7rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.audio {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding-block: 1rem;
+  background-color: var(--clr-gray);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .16), 0 1px 3px rgba(0, 0, 0, .23);
+  padding-inline: .6rem;
+}
