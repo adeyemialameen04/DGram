@@ -60,13 +60,13 @@
     flex-direction: column;
     position: fixed;
     inset: 0 0 0 30%;
-    /* background-color: red; */
     background-color: var(--clr-gray);
     padding-block-start: 6rem;
     gap: 1rem;
     transform: translateX(100%);
     box-shadow: 0 1px 3px rgba(0, 0, 0, .16), 0 1px 3px rgba(0, 0, 0, .23);
     transition: var(--transition);
+    z-index: 9;
   }
 
   .show-nav {

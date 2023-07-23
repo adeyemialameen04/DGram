@@ -35,7 +35,10 @@ const Navbar = () => {
               <Link to="/images">Images</Link>
             </li>
             <li>
-              <Link to="/audio">Audios</Link>
+              <Link to="/audios">Audios</Link>
+            </li>
+            <li>
+              <Link to="/videos">Videos</Link>
             </li>
             <li>
               <button onClick={logout}>
