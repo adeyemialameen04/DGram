@@ -28,7 +28,6 @@ const Videos = () => {
             fileLists.map(({ url, name, uid, realName }) => (
               <article className="video" key={name}>
                 <div className="vid__container">
-                  <p>{realName}</p>
                   <video controls src={url} alt={name}></video>
                 </div>
                 <Btns

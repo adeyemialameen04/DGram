@@ -31,16 +31,16 @@ const Navbar = () => {
         </Link>
         <nav>
           <ul className={`nav__links ${isNavShowing ? "show-nav" : ""}`}>
-            <li>
+            <li onClick={() => setIsNavShowing(prev => !prev)}>
               <Link to="/images">Images</Link>
             </li>
-            <li>
+            <li onClick={() => setIsNavShowing(prev => !prev)}>
               <Link to="/audios">Audios</Link>
             </li>
-            <li>
+            <li onClick={() => setIsNavShowing(prev => !prev)}>
               <Link to="/videos">Videos</Link>
             </li>
-            <li>
+            <li onClick={() => setIsNavShowing(prev => !prev)}>
               <button onClick={logout}>
                 <AiOutlinePoweroff />
               </button>
