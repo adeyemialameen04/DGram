@@ -1,35 +1,35 @@
+import "./videos.css";
+import { useEffect } from 'react';
 import useHandleFile from "../../CustomHooks/useHandleFile";
 import ChooseFile from "../../components/ChooseFile/ChooseFile";
-import { useEffect } from "react";
 import Btns from "../../components/Btns/Btns";
-import "./audio.css";
 
-const Audio = () => {
-  const reference = "audios/";
-  const type = "audio/";
-  const uploadType = "Audio";
-  const { handleUploadFile, fileLists, setFileLists, setFileUpload, getAllFiles, handleDeleteFile, handleDownloadFile } = useHandleFile(reference, type, uploadType);
+const Videos = () => {
+  const reference = "videos/";
+  const type = "video/";
+  const uploadType = "Video";
+  const { uploadFile, fileLists, setFileLists, setFileUpload, getAllFiles, handleDownloadFile } = useHandleFile(reference, type, uploadType);
 
   useEffect(() => {
     getAllFiles();
   }, []);
-
 
   const handleFileDeleted = (name) => {
     setFileLists((prev) => prev.filter((file) => file.name !== name));
   };
 
   return (
-    <section className="audio__section">
-      <div className="container audios__container">
-        <ChooseFile handleUploadFile={handleUploadFile} setFileUpload={setFileUpload} />
-        <main className="auds__container">
+    <section className="videos__section">
+      <div className="container videos__container">
+        <ChooseFile uploadFile={uploadFile} setFileUpload={setFileUpload} />
+        <main className="vids__container">
           {
-            fileLists.map(({ url, name, uid, realName }, index) => (
-              <article className="audio" key={index}>
-                <div className="aud__container">
+            fileLists &&
+            fileLists.map(({ url, name, uid, realName }) => (
+              <article className="video" key={name}>
+                <div className="vid__container">
                   <p>{realName}</p>
-                  <audio controls src={url}></audio>
+                  <video controls src={url} alt={name}></video>
                 </div>
                 <Btns
                   name={name}
@@ -49,4 +49,4 @@ const Audio = () => {
   );
 };
 
-export default Audio;
+export default Videos;

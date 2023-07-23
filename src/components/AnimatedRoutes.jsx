@@ -4,7 +4,8 @@ import Images from "../pages/Images/Images";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
-import Audio from "../pages/Audio/Audio";
+import Audios from "../pages/Audio/Audios";
+import Videos from "../pages/Videos/Videos";
 
 const AnimatedRoutes = () => {
   const navigate = useNavigate();
@@ -23,7 +24,8 @@ const AnimatedRoutes = () => {
     <Routes>
       <Route path="/" element={<Auth />} />
       <Route path="/images" element={<Images />} />
-      <Route path="/audio" element={<Audio />} />
+      <Route path="/audios" element={<Audios />} />
+      <Route path="/videos" element={<Videos />} />
     </Routes>
   );
 };

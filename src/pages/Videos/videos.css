@@ -1,0 +1,28 @@
+.videos__section {
+  margin-top: 2rem;
+  padding-bottom: 10rem;
+}
+
+.videos__container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.vids__container {
+  display: grid;
+  gap: 1.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.video .vid__container video {
+  height: 500px;
+  object-fit: cover;
+  width: 100%;
+}
