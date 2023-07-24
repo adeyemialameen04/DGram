@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { useState, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./config/firebase";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -27,6 +28,7 @@ function App() {
         }
       </>
       <AnimatedRoutes />
+      <Footer />
     </Router>
   );
 };
