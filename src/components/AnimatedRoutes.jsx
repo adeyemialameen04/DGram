@@ -6,6 +6,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
 import Audios from "../pages/Audio/Audios";
 import Videos from "../pages/Videos/Videos";
+import NotFound from "../pages/NotFound/NotFound";
 
 const AnimatedRoutes = () => {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ const AnimatedRoutes = () => {
       <Route path="/images" element={<Images />} />
       <Route path="/audios" element={<Audios />} />
       <Route path="/videos" element={<Videos />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
