@@ -20,7 +20,6 @@ const Auth = () => {
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      console.log(auth?.currentUser);
     } catch (error) {
       console.error(error);
     }
